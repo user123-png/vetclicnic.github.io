@@ -3,15 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Тёплый Хвост — ветеринарная клиника (учебный проект)</title>
-  <meta name="description" content="Учебный проект: сайт вымышленной ветеринарной клиники «Тёплый Хвост». Услуги для собак и кошек, цены, врачи, онлайн-запись.">
+  <title>Тёплый Хвост — ветеринарная клиника</title>
+  <meta name="description" content="Ветеринарная клиника «Тёплый Хвост». Услуги для собак и кошек, цены, врачи, онлайн-запись.">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <a class="skip" href="#main">Перейти к содержанию</a>
-
-  <div class="notice" role="note">Учебный проект. Клиника, врачи, цены и контакты вымышленные.</div>
 
   <header class="header" id="top">
     <div class="container header__row">
@@ -34,7 +32,7 @@
       <div class="header__actions">
         <a class="phone" href="tel:+78001234567">8 (800) 123-45-67<small>круглосуточно</small></a>
         <button class="btn btn--accent" type="button" data-open-booking>Записаться</button>
-        <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <button class="burger" id="burger" type="button" aria-label="Меню">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -54,24 +52,13 @@
             <a class="btn btn--ghost btn--lg" href="#prices">Смотреть цены</a>
           </div>
           <ul class="messengers" aria-label="Связаться в мессенджере">
-            <li><a href="#contacts">Telegram</a></li>
-            <li><a href="#contacts">WhatsApp</a></li>
-            <li><a href="#contacts">VK</a></li>
+            <li><a href="https://t.me/sera1im" data-contact="Telegram" data-value="@sera1im" data-button="Открыть в Telegram">Telegram</a></li>
+            <li><a href="https://wa.me/79604564579" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="tel:+79604564579" data-contact="ВКонтакте" data-value="+7 960 456-45-79">VK</a></li>
           </ul>
         </div>
-        <div class="hero__art" aria-hidden="true">
-          <svg viewBox="0 0 320 320" role="img">
-            <circle cx="160" cy="160" r="150" fill="#e3f1ee"/>
-            <ellipse cx="160" cy="205" rx="78" ry="62" fill="#f28c38"/>
-            <circle cx="160" cy="130" r="58" fill="#f6a35b"/>
-            <path d="M112 92 L96 40 L138 74 Z" fill="#f28c38"/>
-            <path d="M208 92 L224 40 L182 74 Z" fill="#f28c38"/>
-            <circle cx="140" cy="126" r="8" fill="#23332f"/>
-            <circle cx="180" cy="126" r="8" fill="#23332f"/>
-            <path d="M152 148 Q160 158 168 148 Z" fill="#23332f"/>
-            <path d="M160 156 L160 166 M160 166 Q150 174 142 168 M160 166 Q170 174 178 168" stroke="#23332f" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <path d="M226 230 Q282 210 270 160" stroke="#f28c38" stroke-width="16" fill="none" stroke-linecap="round"/>
-          </svg>
+        <div class="hero__art">
+          <img src="img/hero.png" alt="Собака и кошка со стетоскопом">
         </div>
       </div>
     </section>
@@ -80,7 +67,7 @@
     <section class="trust" aria-label="О клинике в цифрах">
       <div class="container trust__grid">
         <div><strong>24/7</strong><span>работает стационар</span></div>
-        <div><strong>15 лет</strong><span>на рынке (вымышленно)</span></div>
+        <div><strong>15 лет</strong><span>на рынке</span></div>
         <div><strong>12</strong><span>врачей разных профилей</span></div>
         <div><strong>30 мин</strong><span>срочные анализы</span></div>
       </div>
@@ -92,9 +79,9 @@
         <h2>Услуги клиники</h2>
         <p class="section__lead">Выберите питомца, чтобы увидеть, чем мы можем помочь.</p>
 
-        <div class="tabs" role="tablist" aria-label="Вид питомца">
-          <button class="tab is-active" role="tab" aria-selected="true" data-species="dog" id="tab-dog" aria-controls="panel-services">Для собак</button>
-          <button class="tab" role="tab" aria-selected="false" data-species="cat" id="tab-cat" aria-controls="panel-services">Для кошек</button>
+        <div class="tabs" aria-label="Вид питомца">
+          <button class="tab is-active" data-species="dog" id="tab-dog">Для собак</button>
+          <button class="tab" data-species="cat" id="tab-cat">Для кошек</button>
         </div>
 
         <div class="cards" id="panel-services" role="tabpanel" aria-labelledby="tab-dog">
@@ -131,7 +118,7 @@
     <section class="section" id="prices">
       <div class="container">
         <h2>Цены</h2>
-        <p class="section__lead">Примерный прайс для демонстрации. Реальные цены клиника устанавливает сама.</p>
+        <p class="section__lead">Окончательную стоимость врач называет до начала лечения.</p>
 
         <div class="price-tools">
           <label class="visually-hidden" for="price-search">Поиск по прайсу</label>
@@ -180,7 +167,6 @@
           <article class="promo"><span class="badge">Check-up</span><h3>Комплексное обследование</h3><p>Осмотр, анализы и УЗИ по специальной цене.</p></article>
           <article class="promo"><span class="badge">Скидка</span><h3>Пенсионерам и владельцам из приютов</h3><p>Скидка на приём по предъявлении документа.</p></article>
         </div>
-        <p class="note">Условия акций вымышленные и приведены для примера.</p>
       </div>
     </section>
 
@@ -188,7 +174,6 @@
     <section class="section" id="doctors">
       <div class="container">
         <h2>Наши врачи</h2>
-        <p class="section__lead">Имена вымышленные. В реальном проекте здесь будут фото и сертификаты врачей.</p>
         <div class="cards cards--4">
           <article class="doctor"><div class="avatar" aria-hidden="true">ИС</div><h3>Ирина Соколова</h3><p>Терапевт, кардиолог</p><button class="link" type="button" data-open-booking>Записаться</button></article>
           <article class="doctor"><div class="avatar" aria-hidden="true">ДВ</div><h3>Дмитрий Волков</h3><p>Хирург, ортопед</p><button class="link" type="button" data-open-booking>Записаться</button></article>
@@ -201,17 +186,16 @@
     <!-- О клинике -->
     <section class="section section--tint" id="about">
       <div class="container about">
-        <div>
+        <div class="about__text">
           <h2>О клинике</h2>
-          <p>«Тёплый Хвост» — вымышленная клиника, придуманная для учебного проекта. Сайт показывает, как должна выглядеть страница ветеринарной клиники: понятные услуги, открытые цены, быстрая запись и контакты на виду.</p>
-          <p>Структура сайта выбрана по результатам анализа сайтов российских ветеринарных клиник. Дизайн, тексты и код написаны с нуля.</p>
+          <p>«Тёплый Хвост» — клиника для тех, кто считает питомца членом семьи. Мы лечим собак и кошек, а также грызунов и птиц и стараемся, чтобы визит проходил спокойно для животного и понятно для хозяина.</p>
+          <p>Перед приёмом называем стоимость, после приёма выдаём письменные рекомендации. Всё нужное — анализы, рентген, УЗИ, стационар — находится в одном здании.</p>
         </div>
         <ul class="checks">
-          <li>Собственная лаборатория</li>
-          <li>Цифровой рентген и УЗИ</li>
-          <li>Круглосуточный стационар</li>
-          <li>Цены на сайте без скрытых платежей</li>
-          <li>Письменные рекомендации после приёма</li>
+          <li><strong>Своя лаборатория</strong> — результаты анализов за 30 минут</li>
+          <li><strong>Рентген и УЗИ</strong> — цифровое оборудование</li>
+          <li><strong>Стационар 24/7</strong> — наблюдение врача ночью</li>
+          <li><strong>Прозрачные цены</strong> — без скрытых платежей</li>
         </ul>
       </div>
     </section>
@@ -220,7 +204,7 @@
     <section class="section" id="reviews">
       <div class="container">
         <h2>Отзывы</h2>
-        <p class="section__lead">Показываются только реальные отзывы. Оставленные ниже отзывы сохраняются в вашем браузере.</p>
+        <p class="section__lead">Расскажите, как прошёл визит, — это помогает другим хозяевам выбрать клинику.</p>
         <div class="reviews" id="reviews-list" aria-live="polite">
           <p class="empty" id="reviews-empty">Пока отзывов нет. Будьте первым.</p>
         </div>
@@ -252,7 +236,7 @@
       <div class="container container--narrow">
         <h2>Частые вопросы</h2>
         <details class="faq"><summary>Нужна ли предварительная запись?</summary><p>Запись удобнее и быстрее, но в экстренных случаях можно приехать без неё: вас примет дежурный врач.</p></details>
-        <details class="faq"><summary>Можно ли оплатить картой?</summary><p>Да, принимаем наличные и банковские карты (в учебном примере).</p></details>
+        <details class="faq"><summary>Можно ли оплатить картой?</summary><p>Да, принимаем наличные и банковские карты.</p></details>
         <details class="faq"><summary>Как узнать стоимость заранее?</summary><p>Ориентируйтесь на прайс на сайте. Точную сумму врач назовёт после осмотра, до начала обследований.</p></details>
         <details class="faq"><summary>Принимаете ли вы экзотических животных?</summary><p>В этой версии сайта — только кошки и собаки.</p></details>
       </div>
@@ -270,9 +254,9 @@
             <p><strong>Режим работы:</strong> круглосуточно, без выходных</p>
           </address>
           <ul class="messengers messengers--dark">
-            <li><a href="#contacts">Telegram</a></li>
-            <li><a href="#contacts">WhatsApp</a></li>
-            <li><a href="#contacts">VK</a></li>
+            <li><a href="https://t.me/sera1im" data-contact="Telegram" data-value="@sera1im" data-button="Открыть в Telegram">Telegram</a></li>
+            <li><a href="https://wa.me/79604564579" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="tel:+79604564579" data-contact="ВКонтакте" data-value="+7 960 456-45-79">VK</a></li>
           </ul>
           <div class="map" role="img" aria-label="Схема проезда (заглушка)">Здесь будет карта проезда</div>
         </div>
@@ -282,10 +266,9 @@
           <p>Оставьте номер — перезвоним в течение часа.</p>
           <div class="field"><label for="cb-name">Ваше имя</label><input id="cb-name" name="name" type="text" required maxlength="40" autocomplete="given-name"><span class="error" aria-live="polite"></span></div>
           <div class="field"><label for="cb-phone">Телефон</label><input id="cb-phone" name="phone" type="tel" required placeholder="+7 900 000-00-00" autocomplete="tel"><span class="error" aria-live="polite"></span></div>
-          <label class="agree"><input type="checkbox" name="agree" required> Согласен на <a href="#privacy" data-open-privacy>обработку персональных данных</a></label>
-          <span class="error" aria-live="polite"></span>
+          <div class="field"><label class="agree"><input type="checkbox" name="agree" required> Согласен на <a href="#privacy" data-open-privacy>обработку персональных данных</a></label><span class="error" aria-live="polite"></span></div>
           <button class="btn btn--accent" type="submit">Перезвоните мне</button>
-          <p class="success" hidden>Спасибо! Заявка сохранена (в демо-версии данные никуда не отправляются).</p>
+          <p class="success" hidden>Спасибо! Мы получили заявку и скоро перезвоним.</p>
         </form>
       </div>
     </section>
@@ -295,7 +278,7 @@
     <div class="container footer__row">
       <div>
         <strong>Тёплый Хвост</strong>
-        <p>Учебный проект. Все названия, имена и цены вымышленные. © 2026</p>
+        <p>© 2026 «Тёплый Хвост». Ветеринарная клиника.</p>
       </div>
       <nav aria-label="Нижнее меню">
         <a href="#services">Услуги</a>
@@ -326,11 +309,20 @@
         </select><span class="error" aria-live="polite"></span>
       </div>
       <div class="field"><label for="bk-date">Желаемая дата</label><input id="bk-date" name="date" type="date" required><span class="error" aria-live="polite"></span></div>
-      <label class="agree"><input type="checkbox" name="agree" required> Согласен на <a href="#privacy" data-open-privacy>обработку персональных данных</a></label>
-      <span class="error" aria-live="polite"></span>
+      <div class="field"><label class="agree"><input type="checkbox" name="agree" required> Согласен на <a href="#privacy" data-open-privacy>обработку персональных данных</a></label><span class="error" aria-live="polite"></span></div>
       <button class="btn btn--accent btn--lg" type="submit">Записаться</button>
-      <p class="success" hidden>Заявка принята. В демо-версии она сохраняется только в вашем браузере.</p>
+      <p class="success" hidden>Заявка принята. Мы перезвоним вам для подтверждения.</p>
     </form>
+  </dialog>
+
+  <!-- Контакт (Telegram, ВКонтакте) -->
+  <dialog class="modal modal--small" id="contact" aria-labelledby="contact-title">
+    <div class="contact">
+      <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
+      <h2 id="contact-title"></h2>
+      <p class="contact__value" id="contact-value"></p>
+      <a class="btn btn--accent" id="contact-link" target="_blank" rel="noopener" hidden></a>
+    </div>
   </dialog>
 
   <!-- Политика -->
@@ -338,12 +330,12 @@
     <div class="form">
       <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
       <h2 id="privacy-title">Конфиденциальность</h2>
-      <p>Сайт учебный. Данные из форм не отправляются на сервер и сохраняются только в памяти вашего браузера (localStorage). Очистить их можно в настройках браузера.</p>
+      <p>Данные из форм на этом сайте никуда не отправляются. Отзывы сохраняются только в вашем браузере, очистить их можно в его настройках.</p>
     </div>
   </dialog>
 
   <div class="cookie" id="cookie" hidden>
-    <p>Сайт запоминает ваш выбор и сохранённые формы в браузере. Нажимая «Понятно», вы с этим соглашаетесь.</p>
+    <p>Сайт сохраняет оставленные отзывы в вашем браузере. Нажимая «Понятно», вы с этим соглашаетесь.</p>
     <button class="btn btn--accent" type="button" id="cookie-ok">Понятно</button>
   </div>
 
