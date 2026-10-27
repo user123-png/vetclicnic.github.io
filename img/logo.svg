@@ -1,8 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="16" fill="#1f7a6d"/>
-  <ellipse cx="32" cy="41" rx="13" ry="10" fill="#fff"/>
-  <ellipse cx="17" cy="26" rx="5" ry="7" fill="#fff"/>
-  <ellipse cx="47" cy="26" rx="5" ry="7" fill="#fff"/>
-  <ellipse cx="26" cy="18" rx="5" ry="7" fill="#fff"/>
-  <ellipse cx="38" cy="18" rx="5" ry="7" fill="#fff"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#ff8a1f" stroke="#1f1410" stroke-width="4"/>
+  <!-- голова с ушами -->
+  <path d="M14 46 V19 L25 27 Q32 25 39 27 L50 19 V46 Q50 55 32 55 Q14 55 14 46 Z" fill="#1f1410"/>
+  <!-- глаза -->
+  <ellipse cx="25" cy="37" rx="3.4" ry="4.4" fill="#ff8a1f"/>
+  <ellipse cx="39" cy="37" rx="3.4" ry="4.4" fill="#ff8a1f"/>
+  <ellipse cx="25.8" cy="36.4" rx="1.1" ry="2.2" fill="#1f1410"/>
+  <ellipse cx="39.8" cy="36.4" rx="1.1" ry="2.2" fill="#1f1410"/>
+  <!-- нос и рот -->
+  <path d="M29.5 43.5 H34.5 L32 46.5 Z" fill="#ff8a1f"/>
+  <path d="M32 46.5 V48.5 M32 48.5 Q29.5 51 27.5 49.5 M32 48.5 Q34.5 51 36.5 49.5" fill="none" stroke="#ff8a1f" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- усы -->
+  <path d="M10 40 L19 42 M10 47 L19 45 M54 40 L45 42 M54 47 L45 45" stroke="#1f1410" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

@@ -58,9 +58,17 @@
         </div>
         <div class="hero__art">
           <img src="img/hero.png" alt="Собака и кошка со стетоскопом">
+          <span class="sticker" aria-hidden="true">Принимаем<br>круглосуточно</span>
         </div>
       </div>
     </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+      </div>
+    </div>
 
     <!-- Показатели доверия -->
     <section class="trust" aria-label="О клинике в цифрах">
@@ -117,7 +125,7 @@
     <section class="section" id="prices">
       <div class="container">
         <h2>Цены</h2>
-        <p class="section__lead">Окончательную стоимость врач называет до начала лечения.</p>
+        <p class="section__lead">Цены ориентировочные, уточняйте у администратора. Окончательную стоимость врач называет до начала лечения.</p>
 
         <div class="price-tools">
           <label class="visually-hidden" for="price-search">Поиск по прайсу</label>
@@ -158,7 +166,7 @@
     </section>
 
     <!-- Акции -->
-    <section class="section section--tint" id="promo">
+    <section class="section section--accent" id="promo">
       <div class="container">
         <h2>Акции</h2>
         <div class="cards cards--3">
@@ -170,14 +178,14 @@
     </section>
 
     <!-- Врачи -->
-    <section class="section" id="doctors">
+    <section class="section section--dark" id="doctors">
       <div class="container">
         <h2>Наши врачи</h2>
         <div class="cards cards--4">
-          <article class="doctor"><div class="avatar" aria-hidden="true">ИС</div><h3>Ирина Соколова</h3><p>Ветврач-терапевт, Ветврач-кардиолог</p><button class="link" type="button" data-open-booking>Записаться</button></article>
-          <article class="doctor"><div class="avatar" aria-hidden="true">ДВ</div><h3>Дмитрий Волков</h3><p>Хирург</p><button class="link" type="button" data-open-booking>Записаться</button></article>
-          <article class="doctor"><div class="avatar" aria-hidden="true">ЕМ</div><h3>Елена Миронова</h3><p>Ветврач-стоматолог</p><button class="link" type="button" data-open-booking>Записаться</button></article>
-          <article class="doctor"><div class="avatar" aria-hidden="true">АК</div><h3>Алексей Крылов</h3><p>Специалист УЗИ и рентгена</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="doctor"><div class="avatar" aria-hidden="true">ИС</div><h3>Ирина Соколова</h3><p>Ветврач-терапевт, Ветврач-кардиолог</p><p class="doctor__days">Приём: пн, ср, пт</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="doctor"><div class="avatar" aria-hidden="true">ДВ</div><h3>Дмитрий Волков</h3><p>Хирург</p><p class="doctor__days">Приём: вт, чт, сб</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="doctor"><div class="avatar" aria-hidden="true">ЕМ</div><h3>Елена Миронова</h3><p>Ветврач-стоматолог</p><p class="doctor__days">Приём: пн–пт</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="doctor"><div class="avatar" aria-hidden="true">АК</div><h3>Алексей Крылов</h3><p>Специалист УЗИ и рентгена</p><p class="doctor__days">Приём: ср–вс</p><button class="link" type="button" data-open-booking>Записаться</button></article>
         </div>
       </div>
     </section>
@@ -256,7 +264,6 @@
             <li><a href="https://t.me/sera1im" data-contact="Telegram" data-value="@sera1im" data-button="Открыть в Telegram">Telegram</a></li>
             <li><a href="https://vk.ru/bruhyouarestupid" data-contact="ВКонтакте" data-button="Перейти в ВКонтакте">VK</a></li>
           </ul>
-          <div class="map" role="img" aria-label="Схема проезда (заглушка)">Здесь будет карта проезда</div>
         </div>
 
         <form class="form" id="callback-form" novalidate>

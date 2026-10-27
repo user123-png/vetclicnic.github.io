@@ -158,3 +158,37 @@ document.querySelector('#cookie-ok').addEventListener('click', () => {
   localStorage.setItem('cookieOk', 'yes');
   cookie.hidden = true;
 });
+
+// ---------- 8. Плавное появление блоков при прокрутке ----------
+// Класс js включает скрытие блоков только если скрипт работает: без него страница видна целиком
+if ('IntersectionObserver' in window) {
+  document.documentElement.classList.add('js');
+  const reveals = document.querySelectorAll('.section h2, .card, .promo, .doctor, .steps li, .article, .faq, .review');
+  const watcher = new IntersectionObserver(items => {
+    items.forEach(item => {
+      if (item.isIntersecting) { item.target.classList.add('is-in'); watcher.unobserve(item.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => { el.classList.add('reveal'); watcher.observe(el); });
+}
+
+// ---------- 9. Статьи: текст «печатается» при открытии ----------
+const typing = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.article').forEach(article => {
+  const text = article.querySelector('p');
+  const fullText = text.textContent;
+  let timer;
+  article.addEventListener('toggle', () => {
+    clearInterval(timer);
+    text.textContent = fullText;
+    if (!article.open || !typing) return;
+    text.style.minHeight = text.offsetHeight + 'px'; // место под весь текст, чтобы карточка не прыгала
+    text.textContent = '';
+    let shown = 0;
+    timer = setInterval(() => {
+      shown += 2;
+      text.textContent = fullText.slice(0, shown);
+      if (shown >= fullText.length) clearInterval(timer);
+    }, 20);
+  });
+});
