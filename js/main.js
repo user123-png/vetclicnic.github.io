@@ -172,23 +172,63 @@ if ('IntersectionObserver' in window) {
   reveals.forEach(el => { el.classList.add('reveal'); watcher.observe(el); });
 }
 
-// ---------- 9. Статьи: текст «печатается» при открытии ----------
-const typing = !matchMedia('(prefers-reduced-motion: reduce)').matches;
-document.querySelectorAll('.article').forEach(article => {
-  const text = article.querySelector('p');
-  const fullText = text.textContent;
-  let timer;
-  article.addEventListener('toggle', () => {
-    clearInterval(timer);
-    text.textContent = fullText;
-    if (!article.open || !typing) return;
-    text.style.minHeight = text.offsetHeight + 'px'; // место под весь текст, чтобы карточка не прыгала
-    text.textContent = '';
-    let shown = 0;
-    timer = setInterval(() => {
-      shown += 2;
-      text.textContent = fullText.slice(0, shown);
-      if (shown >= fullText.length) clearInterval(timer);
-    }, 20);
+// ---------- 9. Мой питомец (данные хранятся в браузере) ----------
+const petForm = document.querySelector('#pet-form');
+const petCard = document.querySelector('#pet-card');
+const petDate = document.querySelector('#pt-date');
+petDate.max = new Date().toISOString().slice(0, 10); // прививка не может быть в будущем
+
+function showPet(pet) {
+  const done = new Date(pet.date);
+  const next = new Date(done);
+  next.setFullYear(done.getFullYear() + 1);                       // повторная прививка — через год
+  const days = Math.ceil((next - new Date()) / 86400000);
+  let status = 'ok', text = `Осталось дней: ${days}`;
+  if (days < 0) { status = 'late'; text = 'Пора на прививку: срок прошёл'; }
+  else if (days <= 30) { status = 'soon'; text = `Скоро: осталось дней — ${days}`; }
+
+  petCard.innerHTML = '<div class="pet__head"><span class="avatar"></span><div><h3></h3><p></p></div></div>' +
+    '<p class="pet__next">Следующая прививка: <strong></strong></p><p class="pet__status"></p>' +
+    '<div class="pet__buttons"><button class="btn btn--accent" type="button" data-open-booking>Записаться</button><button class="link" type="button" id="pet-clear">Удалить данные</button></div>';
+  petCard.querySelector('.avatar').textContent = pet.name[0].toUpperCase();
+  petCard.querySelector('h3').textContent = pet.name;
+  petCard.querySelector('.pet__head p').textContent = `${pet.species}, привит(а) ${done.toLocaleDateString('ru-RU')}`;
+  petCard.querySelector('.pet__next strong').textContent = next.toLocaleDateString('ru-RU');
+  const badge = petCard.querySelector('.pet__status');
+  badge.textContent = text;
+  badge.className = 'pet__status pet__status--' + status;
+  petCard.querySelector('[data-open-booking]').addEventListener('click', () => booking.showModal());
+  petCard.querySelector('#pet-clear').addEventListener('click', () => {
+    localStorage.removeItem('pet');
+    petCard.innerHTML = '<p class="empty">Здесь появится карточка вашего питомца.</p>';
   });
+}
+const savedPet = JSON.parse(localStorage.getItem('pet') || 'null');
+if (savedPet) showPet(savedPet);
+
+petForm.addEventListener('submit', event => {
+  event.preventDefault();
+  if (!validate(petForm)) return;
+  const pet = { name: petForm.querySelector('#pt-name').value.trim(), species: petForm.querySelector('#pt-species').value, date: petDate.value };
+  localStorage.setItem('pet', JSON.stringify(pet));
+  showPet(pet);
+  petForm.reset();
+});
+
+// ---------- 10. Светлая и тёмная тема ----------
+const root = document.documentElement;
+const themeButton = document.querySelector('#theme-toggle');
+function setTheme(name) {
+  root.dataset.theme = name;
+  themeButton.setAttribute('aria-pressed', String(name === 'dark'));
+  try { localStorage.setItem('theme', name); } catch (e) { /* хранилище недоступно — тема просто не запомнится */ }
+}
+let savedTheme = 'light';
+try { savedTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; } catch (e) {}
+setTheme(savedTheme);
+
+themeButton.addEventListener('click', () => {
+  root.classList.add('theme-fade'); // на 0,6 с включается плавный переход цветов
+  setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+  setTimeout(() => root.classList.remove('theme-fade'), 600);
 });
