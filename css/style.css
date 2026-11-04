@@ -1,20 +1,20 @@
 /* Тёплый Хвост. Стили написаны с нуля. */
 :root {
-  --green: #b3470a;
-  --green-dark: #8a3606;
-  --green-tint: #ffe8d2;
-  --orange: #ff8a1f;
-  --orange-dark: #e56f00;
-  --ink: #1f1410;
-  --muted: #6b5548;
-  --bg: #fff7f0;
+  --green: #a8431f;
+  --green-dark: #7d2f12;
+  --green-tint: #ffe6d6;
+  --orange: #ffab85;
+  --orange-dark: #f58f62;
+  --ink: #2a1814;
+  --muted: #70564e;
+  --bg: #fff4ec;
   --white: #ffffff;
-  --line: #ecd5c0;
+  --line: #efd3c4;
   --radius: 10px;
   --shadow: 6px 6px 0 rgba(16, 24, 32, .9);
-  --text: #1f1410;
+  --text: #2a1814;
   --surface: #ffffff;
-  --edge-c: #1f1410;
+  --edge-c: #2a1814;
   --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -41,7 +41,7 @@ p { margin: 0 0 1em; }
 .notice { background: var(--ink); color: #fff; text-align: center; font-size: .85rem; padding: 6px 12px; }
 
 /* Шапка */
-.header { position: sticky; top: 0; z-index: 50; background: rgba(255, 247, 240, .95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.header { position: sticky; top: 0; z-index: 50; background: rgba(255, 244, 236, .95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .header__row { display: flex; align-items: center; gap: 20px; min-height: 72px; }
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; line-height: 1.1; }
 .logo small { display: block; font-weight: 400; color: var(--muted); font-size: .75rem; }
@@ -224,10 +224,10 @@ address { font-style: normal; }
 .btn { border-radius: 8px; text-transform: none; letter-spacing: .01em; border-color: var(--edge-c); box-shadow: var(--hard); transition: transform .12s, box-shadow .12s, background .12s, color .12s; }
 .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--edge-c); }
 .btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--edge-c); }
-.btn--accent { background: var(--orange); color: var(--text); }
-.btn--accent:hover { background: var(--orange); color: var(--text); }
+.btn--accent { background: var(--orange); color: var(--ink); }
+.btn--accent:hover { background: var(--orange); color: var(--ink); }
 .btn--ghost { background: var(--surface); color: var(--text); }
-.btn--ghost:hover { background: var(--ink); color: var(--orange); }
+.btn--ghost:hover { background: var(--orange); color: var(--ink); }
 .link { color: var(--text); text-decoration-color: var(--green); text-decoration-thickness: 3px; transition: color .12s; }
 .link:hover { color: var(--green); }
 
@@ -235,7 +235,7 @@ address { font-style: normal; }
 .hero__art img { transition: transform .3s; }
 .hero__art img:hover { transform: rotate(-3deg) scale(1.04); }
 .messengers a { border-radius: 8px; border: var(--edge); box-shadow: 3px 3px 0 var(--edge-c); transition: transform .12s, box-shadow .12s, background .12s; }
-.messengers a:hover { background: var(--orange); color: var(--text); border-color: var(--edge-c); transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--edge-c); }
+.messengers a:hover { background: var(--orange); color: var(--ink); border-color: var(--edge-c); transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--edge-c); }
 
 .trust__grid div, .card, .promo, .doctor, .steps li, .article, .faq, .table-wrap { border: var(--edge); border-radius: var(--radius); box-shadow: var(--hard); }
 .card, .promo, .doctor, .steps li { transition: transform .15s, box-shadow .15s; }
@@ -277,8 +277,8 @@ input:focus, select:focus, textarea:focus { outline: none; box-shadow: var(--har
 
 /* Бегущая строка */
 .ticker { background: var(--orange); border-bottom: var(--edge); overflow: hidden; white-space: nowrap; padding: 12px 0; }
-.ticker__track { display: inline-flex; animation: ticker 28s linear infinite; }
-.ticker__track span { font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .95rem; padding-right: 0; }
+.ticker__track { display: inline-flex; animation: ticker 100s linear infinite; }
+.ticker__track span { flex: none; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .95rem; padding-right: 0; }
 @keyframes ticker { to { transform: translateX(-50%); } }
 
 /* Наклейка на первом экране */
@@ -291,8 +291,9 @@ input:focus, select:focus, textarea:focus { outline: none; box-shadow: var(--har
 .js .reveal.is-in { opacity: 1; translate: 0 0; }
 
 /* Тёмная тема */
-html[data-theme="dark"] { color-scheme: dark; --text: #fbeee3; --surface: #251a14; --bg: #17100c; --green-tint: #2a1b12; --green: #ffa45c; --green-dark: #ffb877; --muted: #c9b4a4; --line: #4a3528; --edge-c: #ffb36b; --ink: #0d0805; }
-html[data-theme="dark"] .hero { background: linear-gradient(180deg, #2f1d12, var(--bg)); }
+html[data-theme="dark"] { color-scheme: dark; --text: #e9dfd3; --surface: #221c18; --bg: #181412; --green-tint: #2a211b; --green: #f2b394; --green-dark: #f7c5ab; --muted: #b3a699; --line: #3d322a; --edge-c: #9a6a40; --ink: #0f0b09; --orange: #e8a07c; --orange-dark: #d98a64; }
+html[data-theme="dark"] .hero { background: linear-gradient(180deg, #2a1d14, var(--bg)); }
+html[data-theme="dark"] .hero__art img { filter: brightness(.88); }
 html[data-theme="dark"] .section--dark, html[data-theme="dark"] .footer { border-color: var(--edge-c); }
 .modal { background: var(--surface); color: var(--text); }
 .sticker, .steps span, .ticker, .chip:hover, .price tbody tr:hover, .badge { color: var(--ink); }
@@ -354,3 +355,25 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
   .nav a.nav__pet { display: block; background: var(--orange); color: var(--ink); font-weight: 700; text-align: center; border: var(--edge); border-radius: 8px; box-shadow: var(--hard); padding: 12px 16px; margin: 8px 4px 16px; }
   .nav a.nav__pet:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--edge-c); }
 }
+
+/* Как добраться */
+.route { margin: 0 0 24px; }
+.route__title { margin: 0 0 8px; font-weight: 700; }
+
+/* Исправление: у выбранного фильтра при наведении или касании текст не должен пропадать */
+.chip.is-active, .chip.is-active:hover { background: var(--ink); border-color: var(--edge-c); color: var(--orange); transform: none; }
+.tab.is-active, .tab.is-active:hover { background: var(--ink); color: var(--orange); }
+@media (hover: none) {
+  .chip:not(.is-active):hover { background: var(--surface); transform: none; }
+  .btn:hover, .card:hover, .promo:hover, .doctor:hover, .steps li:hover { transform: none; }
+}
+.section--accent h2, .section--accent .section__lead { color: var(--ink); } /* заголовок на оранжевом фоне всегда тёмный */
+
+/* Карта и фото врачей */
+.map { margin-top: 16px; border: var(--edge); border-radius: var(--radius); box-shadow: var(--hard); overflow: hidden; background: var(--surface); }
+.map iframe { display: block; width: 100%; height: 260px; border: 0; }
+.doctor__photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: var(--edge); background: var(--green-tint); margin-bottom: 8px; }
+/* Тёмная тема: акцентная секция приглушена, чтобы не слепила */
+html[data-theme="dark"] .section--accent { background: #3a2619; }
+html[data-theme="dark"] .section--accent h2, html[data-theme="dark"] .section--accent .section__lead, html[data-theme="dark"] .section--accent .note { color: var(--text); }
+html[data-theme="dark"] .section--accent .promo { background: #2a1d15; }

@@ -232,3 +232,17 @@ themeButton.addEventListener('click', () => {
   setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
   setTimeout(() => root.classList.remove('theme-fade'), 600);
 });
+
+// Фото врачей: если файл img/doctors/N.jpg есть, он заменяет кружок с инициалами
+document.querySelectorAll('.doctor[data-photo]').forEach(function (card) {
+  var probe = new Image();
+  probe.onload = function () {
+    var img = document.createElement('img');
+    img.className = 'doctor__photo';
+    img.src = card.dataset.photo;
+    img.alt = card.querySelector('h3').textContent;
+    img.loading = 'lazy';
+    card.replaceChild(img, card.querySelector('.avatar'));
+  };
+  probe.src = card.dataset.photo;
+});
