@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тёплый Хвостик — ветеринарная клиника</title>
+  <meta name="description" content="Ветеринарная клиника «Тёплый Хвостик». Услуги для собак и кошек, цены, врачи, онлайн-запись.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <a class="skip" href="#main">Перейти к содержанию</a>
+
+  <header class="header">
+    <div class="container header__row">
+      <a class="logo" href="#top" aria-label="Тёплый Хвостик — на главную">
+        <img src="img/logo.svg" width="40" height="40" alt="">
+        <span>Тёплый Хвостик<small>ветеринарная клиника</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основное меню">
+        <a href="#pet" class="nav__pet">Мой питомец</a>
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#promo">Акции</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#about">О клинике</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#articles">Статьи</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="phone" href="tel:+79604564579">8 (960) 456-45-79<small>круглосуточно</small></a>
+        <button class="btn btn--accent" type="button" data-open-booking>Записаться</button>
+        <a class="pet-link" href="#pet" aria-label="Мой питомец" title="Мой питомец">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="6.5" cy="10" rx="2.2" ry="2.8"/><ellipse cx="10.5" cy="5.8" rx="2.2" ry="2.8"/><ellipse cx="15.5" cy="5.8" rx="2.2" ry="2.8"/><ellipse cx="19" cy="10" rx="2.2" ry="2.8"/><path d="M12.8 11c-3 0-6 3.6-6 6.3 0 2 1.7 2.8 3.4 2.4 1-.3 1.8-.5 2.6-.5s1.6.2 2.6.5c1.7.4 3.4-.4 3.4-2.4 0-2.7-3-6.3-6-6.3z"/></svg>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тёмную тему" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A9 9 0 0 1 9.5 3a9 9 0 1 0 11.5 11.5z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="burger" id="burger" type="button" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Первый экран -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Круглосуточный стационар</p>
+          <h1>Забота о питомцах без очередей и сюрпризов в чеке</h1>
+          <p class="lead">Собственная лаборатория, УЗИ и цифровой рентген. Приём по записи и в режиме дежурного врача.</p>
+          <div class="hero__buttons">
+            <button class="btn btn--accent btn--lg" type="button" data-open-booking>Записаться на приём</button>
+            <a class="btn btn--ghost btn--lg" href="#prices">Смотреть цены</a>
+          </div>
+          <ul class="messengers" aria-label="Связаться в мессенджере">
+            <li><a href="https://t.me/sera1im" data-contact="Telegram" data-value="@sera1im" data-button="Открыть в Telegram">Telegram</a></li>
+            <li><a href="https://vk.ru/bruhyouarestupid" data-contact="ВКонтакте" data-button="Перейти в ВКонтакте">VK</a></li>
+          </ul>
+        </div>
+        <div class="hero__art">
+          <img src="img/hero.png" alt="Собака и кошка со стетоскопом">
+          <span class="sticker" aria-hidden="true">Принимаем<br>круглосуточно</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+        <span>Стационар 24/7 ✦ УЗИ ✦ Цифровой рентген ✦ Лаборатория ✦ Вызов врача на дом ✦ Вакцинация ✦ Хирургия ✦ Стоматология ✦ </span>
+      </div>
+    </div>
+
+    <!-- Показатели доверия -->
+    <section class="trust" aria-label="О клинике в цифрах">
+      <div class="container trust__grid">
+        <div><strong>24/7</strong><span>работает стационар</span></div>
+        <div><strong>15 лет</strong><span>на рынке</span></div>
+        <div><strong>12</strong><span>врачей разных специальностей</span></div>
+        <div><strong>За 15 мин</strong><span>срочные анализы</span></div>
+      </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="section" id="services">
+      <div class="container">
+        <h2>Услуги клиники</h2>
+        <p class="section__lead">Выберите питомца, чтобы увидеть, чем мы можем помочь.</p>
+
+        <div class="tabs" aria-label="Вид питомца">
+          <button class="tab is-active" data-species="dog" id="tab-dog">Для собак</button>
+          <button class="tab" data-species="cat" id="tab-cat">Для кошек</button>
+        </div>
+
+        <div class="cards" id="panel-services" role="tabpanel" aria-labelledby="tab-dog">
+          <article class="card" data-for="dog cat"><h3>Терапия и консультация</h3><p>Осмотр, постановка диагноза, план лечения.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog cat"><h3>Вакцинация</h3><p>Плановые прививки и ветеринарный паспорт.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog cat"><h3>УЗИ-диагностика</h3><p>Исследование внутренних органов без боли.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog cat"><h3>Рентген</h3><p>Цифровые снимки, результат сразу на руки.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog cat"><h3>Анализы</h3><p>Собственная лаборатория, срочные — от 15 минут.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog cat"><h3>Хирургия</h3><p>Плановые и экстренные операции, анестезиолог.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog cat"><h3>Стоматология</h3><p>Профессиональная чистка и лечение зубов.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog"><h3>Стерилизация собак</h3><p>Операция «под ключ»: осмотр, анестезия, послеоперационный уход.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog"><h3>Кастрация кобелей</h3><p>Современные методы анестезии, быстрое восстановление.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="cat"><h3>Стерилизация кошек</h3><p>Операция «под ключ»: осмотр, анестезия, послеоперационный уход.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="cat"><h3>Кастрация котов</h3><p>Быстрая операция, возвращение домой в тот же день.</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="card" data-for="dog cat"><h3>Вызов врача на дом</h3><p>Выезд по городу, если питомцу тяжело ехать.</p><button class="link" type="button" data-open-booking>Вызвать</button></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Как проходит приём -->
+    <section class="section section--tint">
+      <div class="container">
+        <h2>Как проходит приём</h2>
+        <ol class="steps">
+          <li><span>1</span><h3>Запись</h3><p>Онлайн-форма, звонок или мессенджер. Можно приехать к дежурному врачу.</p></li>
+          <li><span>2</span><h3>Осмотр</h3><p>Врач осматривает питомца и предлагает только нужные обследования.</p></li>
+          <li><span>3</span><h3>Диагностика</h3><p>УЗИ, рентген и анализы в день обращения.</p></li>
+          <li><span>4</span><h3>План лечения</h3><p>Письменные рекомендации и контакт врача для вопросов.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Цены -->
+    <section class="section" id="prices">
+      <div class="container">
+        <h2>Цены</h2>
+        <p class="section__lead">Цены ориентировочные, уточняйте у администратора. Окончательную стоимость врач называет до начала лечения.</p>
+
+        <div class="price-tools">
+          <label class="visually-hidden" for="price-search">Поиск по прайсу</label>
+          <input id="price-search" type="search" placeholder="Найти услугу, например «УЗИ»">
+          <div class="chips" id="price-chips" role="group" aria-label="Категории">
+            <button class="chip is-active" type="button" data-cat="all">Все</button>
+            <button class="chip" type="button" data-cat="priem">Приём</button>
+            <button class="chip" type="button" data-cat="diagnostika">Диагностика</button>
+            <button class="chip" type="button" data-cat="hirurgiya">Хирургия</button>
+            <button class="chip" type="button" data-cat="profilaktika">Профилактика</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="price" id="price-table">
+            <thead><tr><th scope="col">Услуга</th><th scope="col" class="num">Цена, ₽</th></tr></thead>
+            <tbody>
+              <tr data-cat="priem"><td>Первичный приём терапевта</td><td class="num">1 500</td></tr>
+              <tr data-cat="priem"><td>Повторный приём</td><td class="num">900</td></tr>
+              <tr data-cat="priem"><td>Приём узкого специалиста</td><td class="num">2 200</td></tr>
+              <tr data-cat="priem"><td>Вызов врача на дом (в черте города)</td><td class="num">от 2 500</td></tr>
+              <tr data-cat="diagnostika"><td>УЗИ брюшной полости</td><td class="num">1 800</td></tr>
+              <tr data-cat="diagnostika"><td>Рентген (1 проекция)</td><td class="num">1 200</td></tr>
+              <tr data-cat="diagnostika"><td>Общий анализ крови</td><td class="num">650</td></tr>
+              <tr data-cat="diagnostika"><td>Биохимия крови (базовая)</td><td class="num">1 400</td></tr>
+              <tr data-cat="hirurgiya"><td>Стерилизация кошки</td><td class="num">от 5 500</td></tr>
+              <tr data-cat="hirurgiya"><td>Кастрация кота</td><td class="num">от 3 000</td></tr>
+              <tr data-cat="hirurgiya"><td>Стерилизация собаки</td><td class="num">от 8 000</td></tr>
+              <tr data-cat="hirurgiya"><td>Удаление зубного камня</td><td class="num">от 3 500</td></tr>
+              <tr data-cat="profilaktika"><td>Вакцинация (комплексная)</td><td class="num">1 600</td></tr>
+              <tr data-cat="profilaktika"><td>Чипирование</td><td class="num">1 300</td></tr>
+              <tr data-cat="profilaktika"><td>Оформление ветпаспорта</td><td class="num">300</td></tr>
+            </tbody>
+          </table>
+          <p class="empty" id="price-empty" hidden>По вашему запросу ничего не найдено.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Акции -->
+    <section class="section section--accent" id="promo">
+      <div class="container">
+        <h2>Акции</h2>
+        <div class="cards cards--3">
+          <article class="promo"><span class="badge">−20%</span><h3>Первый приём для щенков и котят</h3><p>Для питомцев до года.</p></article>
+          <article class="promo"><span class="badge">Check-up</span><h3>Комплексное обследование</h3><p>Осмотр, анализы и УЗИ по специальной цене.</p></article>
+          <article class="promo"><span class="badge">Скидка</span><h3>Пенсионерам и владельцам из приютов</h3><p>Скидка на приём по предъявлении документа.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Врачи -->
+    <section class="section section--dark" id="doctors">
+      <div class="container">
+        <h2>Наши врачи</h2>
+        <div class="cards cards--4">
+          <article class="doctor" data-photo="img/doctors/1.jpg"><div class="avatar" aria-hidden="true">ИС</div><h3>Ирина Соколова</h3><p>Ветврач-терапевт, Ветврач-кардиолог</p><p class="doctor__days">Приём: пн, ср, пт</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="doctor" data-photo="img/doctors/2.jpg"><div class="avatar" aria-hidden="true">ДВ</div><h3>Дмитрий Волков</h3><p>Хирург</p><p class="doctor__days">Приём: вт, чт, сб</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="doctor" data-photo="img/doctors/3.jpg"><div class="avatar" aria-hidden="true">ЕМ</div><h3>Елена Миронова</h3><p>Ветврач-стоматолог</p><p class="doctor__days">Приём: пн–пт</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+          <article class="doctor" data-photo="img/doctors/4.jpg"><div class="avatar" aria-hidden="true">АК</div><h3>Алексей Крылов</h3><p>Специалист УЗИ и рентгена</p><p class="doctor__days">Приём: ср–вс</p><button class="link" type="button" data-open-booking>Записаться</button></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- О клинике -->
+    <section class="section section--tint" id="about">
+      <div class="container about">
+        <div class="about__text">
+          <h2>О клинике</h2>
+          <p>«Тёплый Хвостик» — клиника для тех, кто считает питомца членом семьи. Мы лечим собак и кошек, а также грызунов и птиц и стараемся, чтобы визит проходил спокойно для животного и понятно для хозяина.</p>
+          <p>Перед приёмом называем стоимость, после приёма выдаём письменные рекомендации. Всё нужное — анализы, рентген, УЗИ, стационар — находится в одном здании.</p>
+        </div>
+        <ul class="checks">
+          <li><strong>Своя лаборатория</strong> — результаты анализов за 30 минут</li>
+          <li><strong>Рентген и УЗИ</strong> — цифровое оборудование</li>
+          <li><strong>Стационар 24/7</strong> — наблюдение врача ночью</li>
+          <li><strong>Прозрачные цены</strong> — без скрытых платежей</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <h2>Отзывы</h2>
+        <p class="section__lead">Расскажите, как прошёл визит, — это помогает другим хозяевам выбрать клинику.</p>
+        <div class="reviews" id="reviews-list" aria-live="polite">
+          <p class="empty" id="reviews-empty">Пока отзывов нет. Будьте первым.</p>
+        </div>
+
+        <form class="form form--inline" id="review-form" novalidate>
+          <h3>Оставить отзыв</h3>
+          <div class="field"><label for="rv-name">Имя</label><input id="rv-name" name="name" type="text" required maxlength="40" autocomplete="given-name"><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="rv-text">Отзыв</label><textarea id="rv-text" name="text" rows="3" required minlength="10" maxlength="500"></textarea><span class="error" aria-live="polite"></span></div>
+          <button class="btn btn--accent" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Статьи -->
+    <!-- Мой питомец -->
+    <section class="section section--tint" id="pet">
+      <div class="container pet">
+        <div>
+          <h2>Мой питомец</h2>
+          <p class="section__lead">Сохраните кличку и дату последней прививки — сайт подскажет, когда пора на повторную. Данные хранятся только в вашем браузере.</p>
+          <form class="form" id="pet-form" novalidate>
+            <div class="field"><label for="pt-name">Кличка</label><input id="pt-name" name="name" type="text" required maxlength="30"><span class="error" aria-live="polite"></span></div>
+            <div class="field"><label for="pt-species">Кто это</label>
+              <select id="pt-species" name="species" required>
+                <option value="">Выберите</option>
+                <option value="Собака">Собака</option>
+                <option value="Кошка">Кошка</option>
+              </select><span class="error" aria-live="polite"></span></div>
+            <div class="field"><label for="pt-date">Дата последней прививки</label><input id="pt-date" name="date" type="date" required><span class="error" aria-live="polite"></span></div>
+            <button class="btn btn--accent" type="submit">Сохранить</button>
+          </form>
+        </div>
+        <div class="pet__card" id="pet-card" aria-live="polite">
+          <p class="empty" id="pet-empty">Здесь появится карточка вашего питомца.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="articles">
+      <div class="container">
+        <h2>Полезные материалы</h2>
+        <div class="cards cards--3">
+          <details class="article"><summary>Как подготовить питомца к визиту</summary><p>Возьмите ветеринарный паспорт, запишите вопросы и симптомы. Кошек перевозите в переноске, собак — на коротком поводке. Если питомец нервничает, приезжайте чуть раньше и дайте ему освоиться.</p></details>
+          <details class="article"><summary>Когда нельзя ждать</summary><p>Срочно к врачу, если питомец тяжело дышит, не может встать, есть судороги, травма или длительная рвота. Звоните заранее — мы подготовим дежурного врача.</p></details>
+          <details class="article"><summary>Зачем нужен ветпаспорт</summary><p>В паспорте хранится история прививок и обработок. Он нужен для поездок, гостиниц для животных и выставок. Не теряйте его и приносите на каждый приём.</p></details>
+        </div>
+        <p class="note">Материалы носят справочный характер и не заменяют консультацию врача.</p>
+      </div>
+    </section>
+
+    <!-- Вопросы -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <h2>Частые вопросы</h2>
+        <details class="faq"><summary>Нужна ли предварительная запись?</summary><p>Запись удобнее и быстрее, но в экстренных случаях можно приехать без неё: вас примет дежурный врач.</p></details>
+        <details class="faq"><summary>Можно ли оплатить картой?</summary><p>Да, принимаем наличные и банковские карты.</p></details>
+        <details class="faq"><summary>Как узнать стоимость заранее?</summary><p>Ориентируйтесь на прайс на сайте. Точную сумму врач назовёт после осмотра, до начала обследований.</p></details>
+        <details class="faq"><summary>Принимаете ли вы экзотических животных?</summary><p>В этой версии сайта — только кошки и собаки.</p></details>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="section section--tint" id="contacts">
+      <div class="container contacts">
+        <div>
+          <h2>Контакты</h2>
+          <address>
+            <p><strong>Адрес:</strong> г. Ростов на дону, ул. Лесная, д. 1</p>
+            <p><strong>Телефон:</strong> <a href="tel:+79604564579">8 (960) 456-45-79</a></p>
+            <p><strong>Почта:</strong> <a href="mailto:serafimover4@gmail.com">serafimover4@gmail.com</a></p>
+            <p><strong>Режим работы:</strong> круглосуточно, без выходных</p>
+          </address>
+          <ul class="messengers messengers--dark">
+            <li><a href="https://t.me/sera1im" data-contact="Telegram" data-value="@sera1im" data-button="Открыть в Telegram">Telegram</a></li>
+            <li><a href="https://vk.ru/bruhyouarestupid" data-contact="ВКонтакте" data-button="Перейти в ВКонтакте">VK</a></li>
+          </ul>
+          <div class="route">
+            <p class="route__title">Как добраться</p>
+            <ul class="messengers">
+              <li><a href="https://2gis.ru/search/%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83%2C%20%D1%83%D0%BB.%20%D0%9B%D0%B5%D1%81%D0%BD%D0%B0%D1%8F%2C%201" target="_blank" rel="noopener noreferrer">2ГИС</a></li>
+              <li><a href="https://yandex.ru/maps/?text=%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83%2C%20%D1%83%D0%BB.%20%D0%9B%D0%B5%D1%81%D0%BD%D0%B0%D1%8F%2C%201" target="_blank" rel="noopener noreferrer">Яндекс Карты</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%94%D0%BE%D0%BD%D1%83%2C+%D1%83%D0%BB.+%D0%9B%D0%B5%D1%81%D0%BD%D0%B0%D1%8F%2C+1" target="_blank" rel="noopener noreferrer">Google Карты</a></li>
+            </ul>
+          </div>
+          <div class="map">
+            <iframe title="Карта: г. Ростов-на-Дону" loading="lazy" referrerpolicy="no-referrer" src="https://www.openstreetmap.org/export/embed.html?bbox=39.66%2C47.21%2C39.76%2C47.26&amp;layer=mapnik&amp;marker=47.2357%2C39.7015"></iframe>
+          </div>
+        </div>
+
+        <form class="form" id="callback-form" novalidate>
+          <h3>Обратный звонок</h3>
+          <p>Оставьте номер — перезвоним в течение часа.</p>
+          <div class="field"><label for="cb-name">Ваше имя</label><input id="cb-name" name="name" type="text" required maxlength="40" autocomplete="given-name"><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label for="cb-phone">Телефон</label><input id="cb-phone" name="phone" type="tel" required placeholder="+7 800 123-45-67" autocomplete="tel"><span class="error" aria-live="polite"></span></div>
+          <div class="field"><label class="agree"><input type="checkbox" name="agree" required> Согласен на <a href="#privacy" data-open-privacy>обработку персональных данных</a></label><span class="error" aria-live="polite"></span></div>
+          <button class="btn btn--accent" type="submit">Перезвоните мне</button>
+          <p class="success" hidden>Спасибо! Мы получили заявку и скоро перезвоним.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <div>
+        <strong>Тёплый Хвостик</strong>
+        <p>© 2026 «Тёплый Хвостик». Ветеринарная клиника.</p>
+      </div>
+      <nav aria-label="Нижнее меню">
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#pet">Мой питомец</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#privacy" data-open-privacy>Конфиденциальность</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Окно записи -->
+  <dialog class="modal" id="booking" aria-labelledby="booking-title">
+    <form class="form" id="booking-form" method="dialog" novalidate>
+      <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
+      <h2 id="booking-title">Запись на приём</h2>
+      <div class="field"><label for="bk-name">Ваше имя</label><input id="bk-name" name="name" type="text" required maxlength="40" autocomplete="given-name"><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="bk-phone">Телефон</label><input id="bk-phone" name="phone" type="tel" required placeholder="+7 800 123-45-67" autocomplete="tel"><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label for="bk-species">Питомец</label>
+        <select id="bk-species" name="species" required>
+          <option value="">Выберите</option><option>Собака</option><option>Кошка</option>
+        </select><span class="error" aria-live="polite"></span>
+      </div>
+      <div class="field"><label for="bk-service">Услуга</label>
+        <select id="bk-service" name="service" required>
+          <option value="">Выберите</option>
+          <option>Приём терапевта</option><option>Вакцинация</option><option>УЗИ</option><option>Рентген</option><option>Анализы</option><option>Хирургия</option><option>Стоматология</option><option>Вызов на дом</option>
+        </select><span class="error" aria-live="polite"></span>
+      </div>
+      <div class="field"><label for="bk-date">Желаемая дата</label><input id="bk-date" name="date" type="date" required><span class="error" aria-live="polite"></span></div>
+      <div class="field"><label class="agree"><input type="checkbox" name="agree" required> Согласен на <a href="#privacy" data-open-privacy>обработку персональных данных</a></label><span class="error" aria-live="polite"></span></div>
+      <button class="btn btn--accent btn--lg" type="submit">Записаться</button>
+      <p class="success" hidden>Заявка принята. Мы перезвоним вам для подтверждения.</p>
+    </form>
+  </dialog>
+
+  <!-- Контакт (Telegram, ВКонтакте) -->
+  <dialog class="modal modal--small" id="contact" aria-labelledby="contact-title">
+    <div class="contact">
+      <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
+      <h2 id="contact-title"></h2>
+      <p class="contact__value" id="contact-value"></p>
+      <a class="btn btn--accent" id="contact-link" target="_blank" rel="noopener" hidden></a>
+    </div>
+  </dialog>
+
+  <!-- Политика -->
+  <dialog class="modal" id="privacy" aria-labelledby="privacy-title">
+    <div class="form">
+      <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
+      <h2 id="privacy-title">Конфиденциальность</h2>
+      <p>Данные из форм на этом сайте никуда не отправляются. Отзывы сохраняются только в вашем браузере, очистить их можно в его настройках.</p>
+    </div>
+  </dialog>
+
+  <div class="cookie" id="cookie" hidden>
+    <p>Сайт сохраняет оставленные отзывы в вашем браузере. Нажимая «Понятно», вы с этим соглашаетесь.</p>
+    <button class="btn btn--accent" type="button" id="cookie-ok">Понятно</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#ffab85" stroke="#2a1814" stroke-width="4"/>
+  <!-- голова с ушами -->
+  <path d="M14 46 V19 L25 27 Q32 25 39 27 L50 19 V46 Q50 55 32 55 Q14 55 14 46 Z" fill="#2a1814"/>
+  <!-- глаза -->
+  <ellipse cx="25" cy="37" rx="3.4" ry="4.4" fill="#ffab85"/>
+  <ellipse cx="39" cy="37" rx="3.4" ry="4.4" fill="#ffab85"/>
+  <ellipse cx="25.8" cy="36.4" rx="1.1" ry="2.2" fill="#2a1814"/>
+  <ellipse cx="39.8" cy="36.4" rx="1.1" ry="2.2" fill="#2a1814"/>
+  <!-- нос и рот -->
+  <path d="M29.5 43.5 H34.5 L32 46.5 Z" fill="#ffab85"/>
+  <path d="M32 46.5 V48.5 M32 48.5 Q29.5 51 27.5 49.5 M32 48.5 Q34.5 51 36.5 49.5" fill="none" stroke="#ffab85" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- усы -->
+  <path d="M10 40 L19 42 M10 47 L19 45 M54 40 L45 42 M54 47 L45 45" stroke="#2a1814" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
