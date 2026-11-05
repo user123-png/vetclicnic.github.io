@@ -178,6 +178,10 @@ const petCard = document.querySelector('#pet-card');
 const petDate = document.querySelector('#pt-date');
 petDate.max = new Date().toISOString().slice(0, 10); // прививка не может быть в будущем
 
+// Мордочки для карточки питомца (готовые константы, пользовательский текст в разметку не попадает)
+const CAT_ART = '<svg viewBox="0 0 64 64" aria-hidden="true"><path class="pet-art__head" d="M14 46 V19 L25 27 Q32 25 39 27 L50 19 V46 Q50 55 32 55 Q14 55 14 46 Z"/><ellipse class="pet-art__dark" cx="25" cy="37" rx="3" ry="4"/><ellipse class="pet-art__dark" cx="39" cy="37" rx="3" ry="4"/><path class="pet-art__dark" d="M29.5 43.5 H34.5 L32 46.5 Z"/><path class="pet-art__line" d="M32 46.5 V48.5 M32 48.5 Q29.5 51 27.5 49.5 M32 48.5 Q34.5 51 36.5 49.5" fill="none" stroke-width="1.4" stroke-linecap="round"/><path class="pet-art__line" d="M8 40 L18 42 M8 47 L18 45 M56 40 L46 42 M56 47 L46 45" fill="none" stroke-width="2" stroke-linecap="round"/></svg>';
+const DOG_ART = '<svg viewBox="0 0 64 64" aria-hidden="true"><path class="pet-art__ear" d="M13 18 Q4 34 13 48 Q21 48 22 36 L21 18 Z"/><path class="pet-art__ear" d="M51 18 Q60 34 51 48 Q43 48 42 36 L43 18 Z"/><rect class="pet-art__head" x="17" y="12" width="30" height="40" rx="15"/><ellipse class="pet-art__snout" cx="32" cy="42" rx="9.5" ry="7.5"/><circle class="pet-art__dark" cx="25" cy="30" r="2.8"/><circle class="pet-art__dark" cx="39" cy="30" r="2.8"/><ellipse class="pet-art__dark" cx="32" cy="38" rx="4.2" ry="3"/><path class="pet-art__line" d="M32 41 V45 M32 45 Q29 48 26.5 46.5 M32 45 Q35 48 37.5 46.5" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg>';
+
 function showPet(pet) {
   const done = new Date(pet.date);
   const next = new Date(done);
@@ -190,9 +194,11 @@ function showPet(pet) {
   petCard.innerHTML = '<div class="pet__head"><span class="avatar"></span><div><h3></h3><p></p></div></div>' +
     '<p class="pet__next">Следующая прививка: <strong></strong></p><p class="pet__status"></p>' +
     '<div class="pet__buttons"><button class="btn btn--accent" type="button" data-open-booking>Записаться</button><button class="link" type="button" id="pet-clear">Удалить данные</button></div>';
-  petCard.querySelector('.avatar').textContent = pet.name[0].toUpperCase();
+  const avatar = petCard.querySelector('.avatar');
+  avatar.classList.add('avatar--pet');
+  avatar.innerHTML = pet.species === 'Кошка' ? CAT_ART : DOG_ART;
   petCard.querySelector('h3').textContent = pet.name;
-  petCard.querySelector('.pet__head p').textContent = `${pet.species}, привит(а) ${done.toLocaleDateString('ru-RU')}`;
+  petCard.querySelector(".pet__head p").textContent = `${pet.species} · последняя прививка ${done.toLocaleDateString("ru-RU")}`;
   petCard.querySelector('.pet__next strong').textContent = next.toLocaleDateString('ru-RU');
   const badge = petCard.querySelector('.pet__status');
   badge.textContent = text;
@@ -218,18 +224,35 @@ petForm.addEventListener('submit', event => {
 // ---------- 10. Светлая и тёмная тема ----------
 const root = document.documentElement;
 const themeButton = document.querySelector('#theme-toggle');
-function setTheme(name) {
+const autoBox = document.querySelector('#theme-auto');
+function setTheme(name, remember) {
   root.dataset.theme = name;
   themeButton.setAttribute('aria-pressed', String(name === 'dark'));
-  try { localStorage.setItem('theme', name); } catch (e) { /* хранилище недоступно — тема просто не запомнится */ }
+  if (remember) {
+    try { localStorage.setItem('theme', name); } catch (e) { /* хранилище недоступно — тема просто не запомнится */ }
+  }
 }
-let savedTheme = 'light';
-try { savedTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; } catch (e) {}
-setTheme(savedTheme);
+// Тема: сначала выбор посетителя, если его нет, то настройка системы (авто-режим)
+let savedTheme = null;
+try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+setTheme(savedTheme || (systemDark.matches ? 'dark' : 'light'), false);
+autoBox.checked = !savedTheme; // галочка «авто» стоит, пока посетитель сам не выбрал тему
+// Пока посетитель сам не нажимал кнопку, тема следует за системой (например, вечером переключается на тёмную)
+systemDark.addEventListener('change', (e) => {
+  let chosen = null;
+  try { chosen = localStorage.getItem('theme'); } catch (err) {}
+  if (!chosen) {
+    root.classList.add('theme-fade');
+    setTheme(e.matches ? 'dark' : 'light', false);
+    setTimeout(() => root.classList.remove('theme-fade'), 600);
+  }
+});
 
 themeButton.addEventListener('click', () => {
   root.classList.add('theme-fade'); // на 0,6 с включается плавный переход цветов
-  setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+  setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true);
+  autoBox.checked = false; // ручной выбор отключает авто-режим
   setTimeout(() => root.classList.remove('theme-fade'), 600);
 });
 
@@ -245,4 +268,16 @@ document.querySelectorAll('.doctor[data-photo]').forEach(function (card) {
     card.replaceChild(img, card.querySelector('.avatar'));
   };
   probe.src = card.dataset.photo;
+});
+
+// Галочка «авто»: включена, значит тема берётся из настроек устройства
+autoBox.addEventListener('change', () => {
+  root.classList.add('theme-fade');
+  if (autoBox.checked) {
+    try { localStorage.removeItem('theme'); } catch (e) {}
+    setTheme(systemDark.matches ? 'dark' : 'light', false);
+  } else {
+    setTheme(root.dataset.theme, true); // фиксируем текущую тему как выбор посетителя
+  }
+  setTimeout(() => root.classList.remove('theme-fade'), 600);
 });

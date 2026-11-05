@@ -412,3 +412,61 @@ html[data-theme="dark"] .section--accent .promo { background: #2a1d15; }
 @media (min-width: 1241px) and (max-width: 1599px) { .nav { gap: 10px; } .nav a { font-size: .9rem; } .header__row { gap: 10px; } .phone small { display: none; } }
 @media (max-width: 700px) { .header__actions .btn { display: none; } }
 .hero { overflow-x: clip; }
+
+/* Галочка «авто» рядом с кнопкой темы */
+.theme-auto { display: inline-flex; align-items: center; gap: 5px; font-size: .8rem; font-weight: 700; color: var(--text); cursor: pointer; user-select: none; }
+.theme-auto input { width: 18px; height: 18px; margin: 0; accent-color: var(--green); cursor: pointer; }
+
+/* Место под «авто»: чуть плотнее шапка */
+@media (min-width: 1241px) {
+  .header__row { gap: 8px; }
+  .nav { gap: 10px; }
+  .nav a { font-size: .9rem; }
+  .header__actions { gap: 8px; }
+  .header__actions .btn { padding-inline: 16px; }
+}
+@media (max-width: 560px) {
+  .phone { display: none; }
+  .header__row { gap: 8px; }
+  .header__actions { gap: 8px; }
+}
+@media (max-width: 400px) {
+  .logo { font-size: .88rem; gap: 6px; }
+  .logo img { width: 34px; height: 34px; }
+  .theme-auto { font-size: .72rem; gap: 3px; }
+  .theme-auto input { width: 16px; height: 16px; }
+  .header__actions { gap: 6px; }
+}
+@media (max-width: 340px) { .theme-auto span { display: none; } }
+
+/* Отзывы в две колонки; материалы под карточкой питомца */
+.reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.reviews-grid .reviews { margin-bottom: 0; }
+.reviews-grid .form--inline { max-width: none; }
+.pet__side { display: grid; gap: 28px; align-content: start; }
+.pet__side .pet__card { min-height: 0; }
+.materials h2 { font-size: 1.5rem; }
+.materials__list { display: grid; gap: 12px; }
+.materials .note { margin-top: 12px; }
+@media (max-width: 860px) { .reviews-grid { grid-template-columns: 1fr; gap: 24px; } }
+.review { border: var(--edge); box-shadow: var(--hard); }
+
+/* Карта в тон сайту: в тёмной теме затемняется, в светлой немного приглушена */
+.map iframe { filter: sepia(.18) saturate(.85); transition: filter .5s ease; }
+html[data-theme="dark"] .map iframe { filter: invert(.92) hue-rotate(180deg) sepia(.25) saturate(.7) brightness(.88) contrast(.92); }
+
+/* Мордочка питомца в карточке */
+.avatar--pet { width: 72px; height: 72px; padding: 6px; }
+.avatar--pet svg { width: 100%; height: 100%; }
+.pet-art__head { fill: var(--orange); }
+.pet-art__ear { fill: var(--orange-dark); }
+.pet-art__snout { fill: rgba(255, 255, 255, .6); }
+.pet-art__dark { fill: var(--ink); }
+.pet-art__line { stroke: var(--ink); }
+
+/* Контакты: левая колонка тянется до высоты формы, «Как добраться» прижато к низу */
+.contacts { align-items: stretch; }
+.contacts > div:first-child { display: flex; flex-direction: column; }
+.contacts .messengers--dark { margin: 4px 0 24px; }
+.contacts .route { margin: auto 0 0; padding-top: 24px; }
+.contacts > div:first-child > h2 { margin-bottom: 22px; }

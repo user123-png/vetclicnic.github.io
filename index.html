@@ -6,6 +6,14 @@
   <title>Тёплый Хвостик — ветеринарная клиника</title>
   <meta name="description" content="Ветеринарная клиника «Тёплый Хвостик». Услуги для собак и кошек, цены, врачи, онлайн-запись.">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <script>
+    /* Тема выставляется до отрисовки, чтобы страница не мигала: выбор посетителя или настройка системы */
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      if (t === 'dark') document.documentElement.dataset.theme = 'dark';
+    } catch (e) {}
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
@@ -40,6 +48,7 @@
           <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A9 9 0 0 1 9.5 3a9 9 0 1 0 11.5 11.5z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
+        <label class="theme-auto" title="Тема следует за настройкой устройства"><span>авто</span><input type="checkbox" id="theme-auto" aria-label="Авто: тема по настройкам устройства" checked></label>
         <button class="burger" id="burger" type="button" aria-label="Меню">
           <span></span><span></span><span></span>
         </button>
@@ -226,6 +235,7 @@
       <div class="container">
         <h2>Отзывы</h2>
         <p class="section__lead">Расскажите, как прошёл визит, — это помогает другим хозяевам выбрать клинику.</p>
+        <div class="reviews-grid">
         <div class="reviews" id="reviews-list" aria-live="polite">
           <p class="empty" id="reviews-empty">Пока отзывов нет. Будьте первым.</p>
         </div>
@@ -236,10 +246,10 @@
           <div class="field"><label for="rv-text">Отзыв</label><textarea id="rv-text" name="text" rows="3" required minlength="10" maxlength="500"></textarea><span class="error" aria-live="polite"></span></div>
           <button class="btn btn--accent" type="submit">Отправить</button>
         </form>
+        </div>
       </div>
     </section>
 
-    <!-- Статьи -->
     <!-- Мой питомец -->
     <section class="section section--tint" id="pet">
       <div class="container pet">
@@ -258,21 +268,20 @@
             <button class="btn btn--accent" type="submit">Сохранить</button>
           </form>
         </div>
-        <div class="pet__card" id="pet-card" aria-live="polite">
-          <p class="empty" id="pet-empty">Здесь появится карточка вашего питомца.</p>
+        <div class="pet__side">
+          <div class="pet__card" id="pet-card" aria-live="polite">
+            <p class="empty" id="pet-empty">Здесь появится карточка вашего питомца.</p>
+          </div>
+          <div class="materials" id="articles">
+            <h2>Полезные материалы</h2>
+            <div class="materials__list">
+              <details class="article"><summary>Как подготовить питомца к визиту</summary><p>Возьмите ветеринарный паспорт, запишите вопросы и симптомы. Кошек перевозите в переноске, собак — на коротком поводке. Если питомец нервничает, приезжайте чуть раньше и дайте ему освоиться.</p></details>
+              <details class="article"><summary>Когда нельзя ждать</summary><p>Срочно к врачу, если питомец тяжело дышит, не может встать, есть судороги, травма или длительная рвота. Звоните заранее — мы подготовим дежурного врача.</p></details>
+              <details class="article"><summary>Зачем нужен ветпаспорт</summary><p>В паспорте хранится история прививок и обработок. Он нужен для поездок, гостиниц для животных и выставок. Не теряйте его и приносите на каждый приём.</p></details>
+            </div>
+            <p class="note">Материалы носят справочный характер и не заменяют консультацию врача.</p>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="articles">
-      <div class="container">
-        <h2>Полезные материалы</h2>
-        <div class="cards cards--3">
-          <details class="article"><summary>Как подготовить питомца к визиту</summary><p>Возьмите ветеринарный паспорт, запишите вопросы и симптомы. Кошек перевозите в переноске, собак — на коротком поводке. Если питомец нервничает, приезжайте чуть раньше и дайте ему освоиться.</p></details>
-          <details class="article"><summary>Когда нельзя ждать</summary><p>Срочно к врачу, если питомец тяжело дышит, не может встать, есть судороги, травма или длительная рвота. Звоните заранее — мы подготовим дежурного врача.</p></details>
-          <details class="article"><summary>Зачем нужен ветпаспорт</summary><p>В паспорте хранится история прививок и обработок. Он нужен для поездок, гостиниц для животных и выставок. Не теряйте его и приносите на каждый приём.</p></details>
-        </div>
-        <p class="note">Материалы носят справочный характер и не заменяют консультацию врача.</p>
       </div>
     </section>
 
